@@ -1,9 +1,9 @@
 <div class="d-flex" style="min-height: 100vh;">
   <!-- Aside fixo na esquerda -->
-  <app-aside class="bg-dark text-white" style="width: 240px; flex-shrink: 0;"></app-aside>
+  <app-aside></app-aside>
 
-  <!-- Conteúdo centralizado no restante da tela -->
-  <div class="flex-grow-1 d-flex justify-content-center align-items-start p-4">
+  <!-- Conteúdo principal com margem lateral -->
+  <div class="flex-grow-1 d-flex justify-content-center align-items-start p-4" style="margin-left: 240px;">
     <div style="width: 100%; max-width: 900px;">
       <router-outlet></router-outlet>
     </div>

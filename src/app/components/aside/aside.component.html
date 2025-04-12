@@ -1,18 +1,15 @@
 <div
-  class="d-flex flex-column flex-shrink-0 p-3 bg-dark text-white h-100"
-  style="width: 240px"
+  class="d-flex flex-column bg-dark text-white p-3"
+  style="width: 240px; height: 100vh; position: fixed; top: 0; left: 0; z-index: 1030;"
 >
-  <a
-    routerLink="/"
-    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-  >
+  <a routerLink="/" class="d-flex align-items-center mb-3 text-white text-decoration-none">
     <span class="fs-4">Banco de Sangue</span>
   </a>
 
   <hr class="border-secondary" />
 
   <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav- m-2">
+    <li class="nav-item">
       <a
         routerLink="/"
         routerLinkActive="active"
@@ -22,7 +19,7 @@
         🏠 Início
       </a>
     </li>
-    <li class="nav-item m-2">
+    <li class="nav-item">
       <a
         routerLink="/doadores/cadastrar"
         routerLinkActive="active"
@@ -31,7 +28,7 @@
         🧍 Cadastrar Doador
       </a>
     </li>
-    <li class="nav-item m-2">
+    <li class="nav-item">
       <a
         routerLink="/agendamentos/cadastrar"
         routerLinkActive="active"
@@ -41,5 +38,4 @@
       </a>
     </li>
   </ul>
-  <hr class="border-secondary" />
 </div>
