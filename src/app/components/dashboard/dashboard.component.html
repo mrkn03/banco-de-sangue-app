@@ -1,0 +1,15 @@
+<h2 class="mb-4">🩸 Estoque Atual de Sangue</h2>
+
+<div *ngIf="estoque">
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let tipo of tipos()">
+      <div class="card text-center shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ tipo.nome }}</h5>
+          <p class="card-text fw-bold">{{ tipo.valor }} ml</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text-end"><strong>Total:</strong> {{ estoque.totalEstoque }} ml</p>
+</div>
