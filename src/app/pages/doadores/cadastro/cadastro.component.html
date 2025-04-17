@@ -1,8 +1,7 @@
 <div class="container mt-4">
   <h3>🧍 Cadastro de Doador</h3>
 
-  <form [formGroup]="doadorForm" (ngSubmit)="onSubmit()" class="mt-4">
-
+  <form [formGroup]="doadorForm" (ngSubmit)="cadastrarUsuario()" class="mt-4">
     <div class="mb-3">
       <label>Nome</label>
       <input formControlName="nome" class="form-control" />
@@ -10,7 +9,13 @@
 
     <div class="mb-3">
       <label>CPF</label>
-      <input formControlName="cpfDoador" class="form-control" />
+      <input
+        formControlName="cpfDoador"
+        class="form-control"
+        mask="000.000.000-00"
+        [dropSpecialCharacters]="true"
+        placeholder="000.000.000-00"
+      />
     </div>
 
     <div class="mb-3">
@@ -20,17 +25,32 @@
 
     <div class="mb-3">
       <label>Telefone</label>
-      <input formControlName="telefone" class="form-control" />
+      <input
+        formControlName="telefone"
+        class="form-control"
+        mask="(00) 00000-0000"
+        [dropSpecialCharacters]="true"
+        placeholder="(00) 00000-0000"
+      />
     </div>
 
     <div class="mb-3">
       <label>Tipo Sanguíneo</label>
       <select formControlName="tipoSanguineo" class="form-select">
         <option value="">Selecione</option>
-        <option *ngFor="let tipo of ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']" [value]="tipo">{{ tipo }}</option>
+        <option
+          *ngFor="
+            let tipo of ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
+          "
+          [value]="tipo"
+        >
+          {{ tipo }}
+        </option>
       </select>
     </div>
 
-    <button class="btn btn-primary" [disabled]="doadorForm.invalid">Cadastrar</button>
+    <button class="btn btn-primary" [disabled]="doadorForm.invalid">
+      Cadastrar
+    </button>
   </form>
 </div>
