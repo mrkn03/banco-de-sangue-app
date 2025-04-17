@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CadastroDoadorComponent } from './pages/doadores/cadastro/cadastro.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxMaskDirective
+    NgxMaskDirective,
+    NgChartsModule
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]
