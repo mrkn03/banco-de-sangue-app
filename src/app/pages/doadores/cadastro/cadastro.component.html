@@ -1,62 +1,85 @@
-<div class="container mt-4">
-  <h3 class="mb-4"><i class="bi bi-person-plus-fill text-danger me-2"></i> Cadastro de Doador</h3>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h3 class="card-title text-center mb-4 text-danger">
+            <i class="bi bi-person-plus-fill me-2"></i>Cadastro de Doador
+          </h3>
 
-  <form [formGroup]="doadorForm" (ngSubmit)="cadastrarUsuario()" class="mt-4">
-      <div class="mb-3">
-          <label for="nome" class="form-label">Nome</label>
-          <input formControlName="nome" class="form-control" id="nome" />
-          <div class="invalid-feedback">Por favor, digite seu nome.</div> </div>
+          <form [formGroup]="doadorForm" (ngSubmit)="cadastrarUsuario()">
 
-      <div class="mb-3">
-          <label for="cpfDoador" class="form-label">CPF</label>
-          <input
-              formControlName="cpfDoador"
-              class="form-control"
-              id="cpfDoador"
-              mask="000.000.000-00"
-              [dropSpecialCharacters]="true"
-              placeholder="000.000.000-00"
-          />
-          <div class="invalid-feedback">Por favor, digite um CPF válido.</div>
+            <!-- Nome -->
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome completo</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                <input formControlName="nome" class="form-control" id="nome" placeholder="Ex: João da Silva" />
+              </div>
+            </div>
+
+            <!-- CPF -->
+            <div class="mb-3">
+              <label for="cpfDoador" class="form-label">CPF</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-credit-card-fill"></i></span>
+                <input
+                  formControlName="cpfDoador"
+                  class="form-control"
+                  id="cpfDoador"
+                  mask="000.000.000-00"
+                  [dropSpecialCharacters]="true"
+                  placeholder="000.000.000-00"
+                />
+              </div>
+            </div>
+
+            <!-- Data de nascimento -->
+            <div class="mb-3">
+              <label for="dataNascimento" class="form-label">Data de nascimento</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar-event-fill"></i></span>
+                <input formControlName="dataNascimento" type="date" class="form-control" id="dataNascimento" />
+              </div>
+            </div>
+
+            <!-- Telefone -->
+            <div class="mb-3">
+              <label for="telefone" class="form-label">Telefone</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                <input
+                  formControlName="telefone"
+                  class="form-control"
+                  id="telefone"
+                  mask="(00) 00000-0000"
+                  [dropSpecialCharacters]="true"
+                  placeholder="(00) 00000-0000"
+                />
+              </div>
+            </div>
+
+            <!-- Tipo sanguíneo -->
+            <div class="mb-4">
+              <label for="tipoSanguineo" class="form-label">Tipo sanguíneo</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-droplet-fill"></i></span>
+                <select formControlName="tipoSanguineo" class="form-select" id="tipoSanguineo">
+                  <option value="">Selecione</option>
+                  <option *ngFor="let tipo of ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']" [value]="tipo">
+                    {{ tipo }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Botão -->
+            <button class="btn btn-primary btn-lg w-100" [disabled]="doadorForm.invalid">
+              <i class="bi bi-check2-circle me-2"></i> Finalizar Cadastro
+            </button>
+          </form>
+        </div>
       </div>
-
-      <div class="mb-3">
-          <label for="dataNascimento" class="form-label">Data de nascimento</label>
-          <input formControlName="dataNascimento" type="date" class="form-control" id="dataNascimento" />
-          <div class="invalid-feedback">Por favor, selecione sua data de nascimento.</div>
-      </div>
-
-      <div class="mb-3">
-          <label for="telefone" class="form-label">Telefone</label>
-          <input
-              formControlName="telefone"
-              class="form-control"
-              id="telefone"
-              mask="(00) 00000-0000"
-              [dropSpecialCharacters]="true"
-              placeholder="(00) 00000-0000"
-          />
-          <div class="invalid-feedback">Por favor, digite seu telefone.</div>
-      </div>
-
-      <div class="mb-3">
-          <label for="tipoSanguineo" class="form-label">Tipo Sanguíneo</label>
-          <select formControlName="tipoSanguineo" class="form-select" id="tipoSanguineo">
-              <option value="">Selecione</option>
-              <option
-                  *ngFor="
-                      let tipo of ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']
-                  "
-                  [value]="tipo"
-              >
-                  {{ tipo }}
-              </option>
-          </select>
-          <div class="invalid-feedback">Por favor, selecione o tipo sanguíneo.</div>
-      </div>
-
-      <button class="btn btn-primary" [disabled]="doadorForm.invalid">
-          Cadastrar
-      </button>
-  </form>
+    </div>
+  </div>
 </div>

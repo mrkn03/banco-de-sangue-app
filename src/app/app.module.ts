@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DoacoesComponent } from './pages/doacoes/doacoes.component';
 import { AgendamentosComponent } from './pages/agendamentos/agendamentos.component';
-import { AsideComponent } from './components/aside/aside.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -15,6 +14,7 @@ import { CadastroDoadorComponent } from './pages/doadores/cadastro/cadastro.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { NgChartsModule } from 'ng2-charts';
+import { EstatisticasComponent } from './pages/estatisticas/estatisticas.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,11 @@ import { NgChartsModule } from 'ng2-charts';
     HomeComponent,
     DoacoesComponent,
     AgendamentosComponent,
-    AsideComponent,
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    CadastroDoadorComponent
+    CadastroDoadorComponent,
+    EstatisticasComponent
   ],
   imports: [
     BrowserModule,

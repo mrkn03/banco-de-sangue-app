@@ -1,1 +1,28 @@
-<p>header works!</p>
+<header class="d-flex flex-wrap justify-content-between align-items-center py-3 px-4 mb-4 border-bottom bg-white shadow-sm">
+  <a routerLink="/" class="d-flex align-items-center text-dark text-decoration-none">
+    <span class="fs-4 fw-semibold">🩸 Banco de Sangue</span>
+  </a>
+
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+        Início
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/doadores/cadastrar" routerLinkActive="active" class="nav-link">
+        Cadastrar Doador
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="agendamentos" routerLinkActive="active" class="nav-link">
+        Agendar Doação
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/estatisticas" routerLinkActive="active" class="nav-link">
+        Estatísticas
+      </a>
+    </li>
+  </ul>
+</header>
