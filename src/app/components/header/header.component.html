@@ -1,28 +1,37 @@
-<header class="d-flex flex-wrap justify-content-between align-items-center py-3 px-4 mb-4 border-bottom bg-white shadow-sm">
-  <a routerLink="/" class="d-flex align-items-center text-dark text-decoration-none">
-    <span class="fs-4 fw-semibold">🩸 Banco de Sangue</span>
-  </a>
+<header class="navbar navbar-expand-lg fixed-top bg-white shadow-sm px-4 py-3 mx-4 mt-3 rounded-3 border border-light">
+  <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
+    <a routerLink="/" class="navbar-brand d-flex align-items-center gap-2">
+      <img src="assets/img/blood.png" alt="Logo Banco de Sangue" width="28" height="28" />
+      <span class="fw-bold fs-5 text-dark">Banco de Sangue</span>
+    </a>
 
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
-        Início
-      </a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="/doadores/cadastrar" routerLinkActive="active" class="nav-link">
-        Cadastrar Doador
-      </a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="agendamentos" routerLinkActive="active" class="nav-link">
-        Agendar Doação
-      </a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="/estatisticas" routerLinkActive="active" class="nav-link">
-        Estatísticas
-      </a>
-    </li>
-  </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuHeader">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="menuHeader">
+      <ul class="navbar-nav gap-3">
+        <li class="nav-item">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link fw-medium transition">
+            Início
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/doadores/cadastrar" routerLinkActive="active" class="nav-link fw-medium transition">
+            Cadastrar Doador
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/agendamentos" routerLinkActive="active" class="nav-link fw-medium transition">
+            Agendar Doação
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/estatisticas" routerLinkActive="active" class="nav-link fw-medium transition">
+            Estatísticas
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>

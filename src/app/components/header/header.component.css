@@ -1,4 +1,13 @@
+.nav-link {
+  transition: all 0.1s ease-in-out;
+  color: #555;
+}
+.nav-link:hover {
+  color: #dc3545 !important;
+}
+
 .nav-link.active {
-  background-color: #dc3545;
-  color: white !important;
+  color: #dc3545 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #dc3545;
 }
