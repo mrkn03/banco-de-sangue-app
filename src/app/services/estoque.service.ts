@@ -24,6 +24,5 @@ export class EstoqueService {
 
   getEstoque(): Observable<EstoqueDeSangue> {
     return this.http.get<EstoqueDeSangue>(this.api);
-
   }
 }

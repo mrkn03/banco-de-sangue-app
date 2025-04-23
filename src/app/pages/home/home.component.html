@@ -1,76 +1,61 @@
-<!-- HERO Section com imagem e sobreposição -->
-<section class="text-white text-center py-5" style="background: linear-gradient(rgba(220,53,69,0.85), rgba(220,53,69,0.85)), url('assets/images/doacao.jpg') center/cover no-repeat;">
+<!-- HERO Section -->
+<section class="d-flex align-items-center justify-content-center text-white text-center vh-100 m-4 rounded-4 shadow"
+  style="background: linear-gradient(rgba(220,53,69,0.9), rgba(220,53,69,0.9)), url('assets/images/doacao.jpg') center/cover no-repeat;">
   <div class="container">
-    <h1 class="display-4 fw-bold">Doe Sangue. Salve Vidas.</h1>
-    <p class="lead mt-3">Você pode ser o herói anônimo que alguém precisa hoje.</p>
-    <div class="mt-4">
-      <a routerLink="/dashboard/doadores/cadastrar" class="btn btn-light btn-lg me-md-2 mb-2 mb-md-0">
-        <i class="bi bi-person-plus-fill me-2"></i> Cadastrar Doador
-      </a>
-      <a routerLink="/dashboard/agendamentos/cadastrar" class="btn btn-outline-light btn-lg">
-        <i class="bi bi-calendar-plus-fill me-2"></i> Agendar Doação
-      </a>
+    <div class="hero-card mx-auto" style="max-width: 700px;">
+      <h1 class="display-4 fw-bold mb-3">Doe Sangue. Salve Vidas.</h1>
+      <p class="lead mb-4">Seja o <strong>herói anônimo</strong> que alguém precisa hoje.</p>
+      <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+        <a routerLink="/doadores/cadastrar" class="btn btn-light hero-btn">
+          <i class="fa-solid fa-user-plus me-2"></i> Cadastrar Doador
+        </a>
+        <a routerLink="/agendamentos" class="btn btn-outline-light hero-btn">
+          <i class="fa-solid fa-calendar-plus me-2"></i> Agendar Doação
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
+
 <!-- POR QUE DOAR -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light text-center m-4 rounded-4 shadow">
   <div class="container">
-    <h2 class="text-center mb-4">Por que doar sangue?</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <p class="fs-5">
-          A cada doação, é possível salvar até 4 vidas. O sangue não pode ser fabricado artificialmente. Hospitais e hemocentros dependem da solidariedade de doadores para atender emergências, cirurgias e tratamentos.
-        </p>
-        <p class="fs-5">
-          Ao doar sangue, você realiza um ato de amor ao próximo. É rápido, seguro e pode transformar completamente a vida de alguém.
-        </p>
-      </div>
-    </div>
+    <h2 class="display-5 fw-bold mb-4">Por que doar sangue?</h2>
+    <p class="lead">Uma doação pode salvar <strong>até 4 vidas</strong>. Doe sangue, doe esperança.</p>
+    <p class="fs-5 text-muted">Um ato simples, rápido e <span class="fw-semibold">cheio de impacto</span>.</p>
   </div>
 </section>
 
 <!-- COMO DOAR -->
-<section class="py-5 bg-white">
+<section class="py-5 bg-white m-4 rounded-4 shadow">
   <div class="container">
-    <h2 class="text-center mb-4">Como doar sangue?</h2>
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h4 class="mb-3"><i class="bi bi-heart-fill text-danger me-2"></i> Requisitos básicos:</h4>
-        <ul class="list-unstyled">
-          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Boa saúde</li>
-          <li><i class="bi bi-check-circle-fill text-success me-2"></i> 16 a 69 anos</li>
-          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Peso mínimo 50 kg</li>
-          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Bem alimentado e descansado</li>
-          <li><i class="bi bi-check-circle-fill text-success me-2"></i> Documento com foto</li>
+    <h2 class="text-center display-6 fw-bold mb-5">Como doar sangue?</h2>
+    <div class="row g-5 align-items-center justify-content-center">
+      <div class="col-lg-6">
+        <ul class="list-unstyled fs-5">
+          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Ter entre 16 e 69 anos</li>
+          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Estar com boa saúde</li>
+          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Pesar no mínimo 50kg</li>
+          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Estar bem alimentado e descansado</li>
+          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Levar documento com foto</li>
         </ul>
-        <p class="mt-3">
-          <a href="/requisitos-completos" class="text-danger">
-            Ver requisitos completos <i class="bi bi-arrow-right-circle-fill ms-1"></i>
-          </a>
-        </p>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="assets/images/processo-doacao.svg" alt="Processo de doação de sangue" class="img-fluid rounded shadow" style="max-height: 300px;">
       </div>
     </div>
   </div>
 </section>
 
 <!-- ONDE DOAR -->
-<section class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="mb-4"><i class="bi bi-geo-alt-fill text-danger me-2"></i> Onde doar em Vitória?</h2>
-    <p class="fs-5">Procure o hemocentro mais próximo ou os locais de coleta na sua região:</p>
-    <div class="mt-3 d-flex justify-content-center">
-      <div class="card p-3 shadow-sm" style="max-width: 500px;">
-        <h5 class="card-title">Hemocentro do Espírito Santo (HEMOES)</h5>
-        <p class="card-text">Av. Marechal Campos, 1468 - Maruípe, Vitória - ES</p>
-        <a href="https://hemoes.es.gov.br/" target="_blank" class="btn btn-danger btn-sm">
-          Visitar o site do HEMOES <i class="bi bi-link-45deg"></i>
-        </a>
-      </div>
+<section class="bg-light py-5 text-center">
+  <div class="container">
+    <h2 class="mb-4 display-6"><i class="fa-solid fa-location-dot text-danger"></i> Onde doar em Vitória?</h2>
+    <p class="fs-5 mb-4">Encontre o hemocentro mais próximo de você:</p>
+    <div class="card mx-auto shadow rounded-4 border-0 p-4" style="max-width: 500px;">
+      <h5 class="fw-bold">HEMOES - Hemocentro do Espírito Santo</h5>
+      <p>Av. Marechal Campos, 1468 - Maruípe, Vitória - ES</p>
+      <a href="https://hemoes.es.gov.br" target="_blank" class="btn btn-danger btn-sm rounded-pill px-3">
+        Visitar o site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
     </div>
   </div>
 </section>
@@ -78,46 +63,33 @@
 <!-- BENEFÍCIOS -->
 <section class="py-5 bg-white">
   <div class="container text-center">
-    <h2 class="mb-4"><i class="bi bi-gift-fill text-success me-2"></i> Benefícios de ser um doador</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-4 mb-3">
-        <div class="bg-light p-3 rounded shadow-sm">
-          <i class="bi bi-heart-pulse-fill text-danger fs-2 mb-2"></i>
-          <h4>Check-up Gratuito</h4>
-          <p class="text-muted">Exames para detectar possíveis problemas de saúde.</p>
+    <h2 class="mb-5 display-6"><i class="fa-solid fa-hand-holding-heart text-success"></i> Benefícios de ser um doador</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+          <i class="fa-solid fa-stethoscope fs-1 text-danger mb-3 d-block"></i>
+          <h4 class="fw-bold">Check-up Gratuito</h4>
+          <p class="text-muted">Avaliação médica e exames gratuitos a cada doação.</p>
         </div>
       </div>
-      <div class="col-md-4 mb-3">
-        <div class="bg-light p-3 rounded shadow-sm">
-          <i class="bi bi-hand-heart-fill text-primary fs-2 mb-2"></i>
-          <h4>Ato de Solidariedade</h4>
-          <p class="text-muted">Ajude a salvar vidas e fortaleça sua comunidade.</p>
+      <div class="col-md-6 col-lg-4">
+        <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+          <i class="fa-solid fa-people-group fs-1 text-primary mb-3 d-block"></i>
+          <h4 class="fw-bold">Solidariedade</h4>
+          <p class="text-muted">Ajude sua comunidade com um gesto de empatia.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DEPOIMENTO -->
-<section class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="mb-4"><i class="bi bi-chat-quote-fill text-secondary me-2"></i> Depoimento</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <blockquote class="blockquote">
-          <p class="mb-3">"Doar sangue foi rápido e simples. Saber que ajudei alguém me fez sentir incrível."</p>
-          <footer class="blockquote-footer">Carlos Henrique, 28 anos</footer>
-        </blockquote>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA Final -->
+<!-- CHAMADA FINAL -->
 <section class="py-5 bg-danger text-white text-center">
   <div class="container">
-    <h2 class="mb-3">💉 Pronto para fazer a diferença?</h2>
-    <p class="fs-5 mb-4">Cadastre-se ou agende uma doação agora mesmo e transforme vidas.</p>
-    <a routerLink="/dashboard/doadores/cadastrar" class="btn btn-light btn-lg">Começar</a>
+    <h2 class="mb-3 display-5">💉 Pronto para fazer a diferença?</h2>
+    <p class="lead mb-4">Cadastre-se ou agende uma doação e <strong>transforme vidas</strong>.</p>
+    <a routerLink="/doadores/cadastrar" class="btn btn-light btn-lg px-5 py-2 rounded-pill fw-semibold">
+      Começar
+    </a>
   </div>
 </section>
