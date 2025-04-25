@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Doador {
+DoadorId: any;
   nome: string;
   cpf: string;
   idade: number;
@@ -20,7 +21,11 @@ export class DoadorService {
 
   constructor(private http: HttpClient) { }
 
-  cadastrar(doador: Doador) : Observable<any>{
+  cadastrarDoador(doador: Doador) : Observable<any>{
     return this.http.post(this.api, doador);
+  }
+
+  recuperaDoadores(): Observable<Doador[]> {
+    return this.http.get<Doador[]>(this.api);
   }
 }

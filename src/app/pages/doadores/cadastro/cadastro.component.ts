@@ -29,7 +29,7 @@ export class CadastroDoadorComponent {
   cadastrarUsuario(): void {
     if (this.doadorForm.invalid) return;
 
-    this.doadorService.cadastrar(this.doadorForm.value).subscribe({
+    this.doadorService.cadastrarDoador(this.doadorForm.value).subscribe({
       next: () => Swal.fire({
         title: 'Sucesso',
         text: 'Usuário cadastrado com sucesso!',

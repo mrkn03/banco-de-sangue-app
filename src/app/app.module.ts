@@ -10,7 +10,7 @@ import { AgendamentosComponent } from './pages/agendamentos/agendamentos.compone
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CadastroDoadorComponent } from './pages/doadores/cadastro/cadastro.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { NgChartsModule } from 'ng2-charts';
 import { EstatisticasComponent } from './pages/estatisticas/estatisticas.component';
@@ -34,7 +34,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgxMaskDirective,
-    NgChartsModule
+    NgChartsModule,
+    FormsModule
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]
