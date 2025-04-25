@@ -1,11 +1,34 @@
 <div class="container mt-5">
-  <h2 class="text-center">Estatísticas do Banco de Sangue</h2>
+  <header class="mb-4 text-center">
+    <h2>Estatísticas do Banco de Sangue</h2>
+    <p class="lead">Visão geral dos dados de estoque.</p>
+  </header>
 
-  <div class="chart-container">
-    <canvas id="estoquePieChart"></canvas>
-  </div>
+  <section class="row">
+    <!-- Card 1: Distribuição do Estoque por Tipo Sanguíneo -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Distribuição do Estoque por Tipo Sanguíneo</h5>
+          <div class="chart-container">
+            <canvas id="estoquePieChart"></canvas>
+          </div>
+          <p class="card-text"><small class="text-muted">Gráfico de pizza mostrando a proporção de cada tipo sanguíneo em estoque.</small></p>
+        </div>
+      </div>
+    </div>
 
-  <div class="chart-container">
-    <canvas id="estoqueBarChart"></canvas>
-  </div>
+    <!-- Card 2: Quantidade de doações mensais -->
+    <div class="col-12 col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Quantidade de doações mensais</h5>
+          <div class="chart-container">
+            <canvas id="estoqueBarChart"></canvas>
+          </div>
+          <p class="card-text"><small class="text-muted">Gráfico de barras comparando a quantidade de doações mensais realizadas.</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
