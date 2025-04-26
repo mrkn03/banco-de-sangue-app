@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Agendamento } from '../../models/Agendamento';
+
 import { Doador, DoadorService } from '../../services/doador.service';
 import { AgendamentoService } from '../../services/agendamento.service';
+import { Agendamento } from '../../models/Agendamento';
 
 @Component({
   selector: 'app-agendamentos',
@@ -20,11 +21,11 @@ export class AgendamentosComponent {
   ) {}
 
   ngOnInit(): void {
-    this.loadDoadores();
-    this.loadAgendamentos();
+    this.carregarDoadores();
+    this.carregarAgendamentos();
   }
 
-  loadDoadores(): void {
+  carregarDoadores(): void {
     this.doadorService.recuperaDoadores().subscribe(
       (data: Doador[]) => {
         this.doadores = data;
@@ -35,7 +36,7 @@ export class AgendamentosComponent {
     );
   }
 
-  loadAgendamentos(): void {
+  carregarAgendamentos(): void {
     this.agendamentoService.recuperaAgendamento().subscribe(
       (data: Agendamento[]) => {
         this.agendamentos = data;

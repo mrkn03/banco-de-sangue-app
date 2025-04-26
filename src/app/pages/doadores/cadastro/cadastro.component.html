@@ -9,7 +9,6 @@
 
           <form [formGroup]="doadorForm" (ngSubmit)="cadastrarUsuario()">
 
-            <!-- Nome -->
             <div class="mb-3">
               <label for="nome" class="form-label">Nome completo</label>
               <div class="input-group">
@@ -18,7 +17,6 @@
               </div>
             </div>
 
-            <!-- CPF -->
             <div class="mb-3">
               <label for="cpfDoador" class="form-label">CPF</label>
               <div class="input-group">
@@ -34,7 +32,6 @@
               </div>
             </div>
 
-            <!-- Data de nascimento -->
             <div class="mb-3">
               <label for="dataNascimento" class="form-label">Data de nascimento</label>
               <div class="input-group">
@@ -43,7 +40,6 @@
               </div>
             </div>
 
-            <!-- Telefone -->
             <div class="mb-3">
               <label for="telefone" class="form-label">Telefone</label>
               <div class="input-group">
@@ -59,7 +55,6 @@
               </div>
             </div>
 
-            <!-- Tipo sanguíneo -->
             <div class="mb-4">
               <label for="tipoSanguineo" class="form-label">Tipo sanguíneo</label>
               <div class="input-group">
@@ -73,7 +68,6 @@
               </div>
             </div>
 
-            <!-- Botão -->
             <button class="btn btn-primary btn-lg w-100" [disabled]="doadorForm.invalid">
               <i class="bi bi-check2-circle me-2"></i> Finalizar Cadastro
             </button>
