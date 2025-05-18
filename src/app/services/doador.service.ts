@@ -28,4 +28,8 @@ export class DoadorService {
   recuperaDoadores(): Observable<Doador[]> {
     return this.http.get<Doador[]>(this.api);
   }
+
+  recuperaDoador(cpf: number): Observable<Doador> {
+    return this.http.get<Doador>(`${this.api}/${cpf}`);
+  }
 }

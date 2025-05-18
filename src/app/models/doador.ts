@@ -1,5 +1,7 @@
 export class Doador {
-  DoadorId!: number;
   nome!: string;
-  cpfDoador!: string;
+  cpf!: string;
+  dataNascimento!: string;
+  telefone!: string;
+  tipoSanguineo!: string;
 }

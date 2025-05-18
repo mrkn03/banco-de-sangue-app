@@ -1,6 +1,8 @@
-export class Agendamento {
-  AgendamentoId!: number;
-  DoadorId!: number;
-  Data!: string;
-  doador!: { nome: string };
+import { Doador } from "./doador";
+
+export class agendamento {
+  doador!: Doador
+  data!: string;
+  localColeta!: string;
+  observacoes?: string;
 }

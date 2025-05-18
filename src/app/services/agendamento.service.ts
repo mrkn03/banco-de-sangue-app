@@ -2,25 +2,25 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { Agendamento } from '../models/Agendamento';
+import { agendamento } from '../models/agendamento';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AgendamentoService {
-  private apiUrl = `${environment.apiUrl}/Agendamento`;  // Altere para a URL da sua API
+  private apiUrl = `${environment.apiUrl}/Agendamento`;
 
   constructor(private http: HttpClient) { }
 
-  recuperaAgendamento(): Observable<Agendamento[]> {
-    return this.http.get<Agendamento[]>(`${this.apiUrl}/`);
+  recuperaAgendamento(): Observable<agendamento[]> {
+    return this.http.get<agendamento[]>(`${this.apiUrl}/`);
   }
-  recuperaAgendamentoAutenticado(id: number): Observable<Agendamento[]> {
-    return this.http.get<Agendamento[]>(`${this.apiUrl}/${id}`);
+  recuperaAgendamentoAutenticado(id: number): Observable<agendamento[]> {
+    return this.http.get<agendamento[]>(`${this.apiUrl}/${id}`);
   }
 
-  criarAgendamento(agendamento: Agendamento): Observable<Agendamento> {
-    return this.http.post<Agendamento>(`${this.apiUrl}`, agendamento);
+  criarAgendamento(agendamento: agendamento): Observable<any> {
+    return this.http.post<agendamento>(`${this.apiUrl}`, agendamento);
   }
 
   excluirAgendamento(id: number): Observable<void> {
