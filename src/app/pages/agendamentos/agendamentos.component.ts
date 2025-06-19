@@ -88,6 +88,7 @@ export class AgendamentosComponent implements OnInit {
 
   carregarAgendamentos(): void {
     this.agendamentoService.recuperaAgendamento().subscribe((agendamentos: any[]) => {
+      console.log('Agendamentos:', agendamentos);
       this.agendamentos = agendamentos;
     });
   }
