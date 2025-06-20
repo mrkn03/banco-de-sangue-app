@@ -92,7 +92,7 @@
     <tbody>
       @for(agendamento of agendamentos; track agendamento){
       <tr>
-        <td>{{ agendamento.doador.nome }}</td>
+        <td>{{ agendamento.nomeDoador }}</td>
         <td>{{ agendamento.data | date }}</td>
         <td>
           <button
