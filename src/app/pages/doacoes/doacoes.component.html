@@ -1,1 +1,62 @@
-<p>doacoes works!</p>
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Realizar Doação</h2>
+
+  <!-- Card do Formulário -->
+  <div class="card shadow-sm mb-5">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">Nova Doação</h5>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="doacaoForm" (ngSubmit)="enviarDoacao()">
+        <div class="mb-3">
+          <label for="cpf" class="form-label">Doador</label>
+          <input
+            id="cpf"
+            formControlName="cpf"
+            type="text"
+            class="form-control"
+            placeholder="Digite o CPF do doador"
+            required
+            autocomplete="off"
+          />
+          <div
+            *ngIf="
+              doacaoForm.get('cpf')?.invalid && doacaoForm.get('cpf')?.touched
+            "
+            class="text-danger mt-1"
+          >
+            Cpf do doador é obrigatório.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="data" class="form-label">Quantidade em ml</label>
+          <input
+            id="quantidadeML"
+            formControlName="quantidadeML"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div
+            *ngIf="
+              doacaoForm.get('quantidadeML')?.invalid &&
+              doacaoForm.get('quantidadeML')?.touched
+            "
+            class="text-danger mt-1"
+          >
+            A quantidade em ml é obrigatória e deve ser um número válido.
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="doacaoForm.invalid"
+        >
+          Realizar Doação
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

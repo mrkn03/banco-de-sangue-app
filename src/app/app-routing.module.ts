@@ -6,13 +6,14 @@ import { AgendamentosComponent } from './pages/agendamentos/agendamentos.compone
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CadastroDoadorComponent } from './pages/doadores/cadastro/cadastro.component';
 import { EstatisticasComponent } from './pages/estatisticas/estatisticas.component';
+import { DoacoesComponent } from './pages/doacoes/doacoes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '', component: DashboardComponent },
   { path: 'doadores/cadastrar', component: CadastroDoadorComponent },
   { path: 'agendamentos', component: AgendamentosComponent },
-  {path: 'estatisticas', component: EstatisticasComponent}
+  { path: 'estatisticas', component: EstatisticasComponent },
+  { path: 'doacoes', component: DoacoesComponent }
 ];
 
 @NgModule({

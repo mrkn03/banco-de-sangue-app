@@ -1,14 +1,15 @@
-<section class="d-flex align-items-center justify-content-center text-white text-center vh-100 m-4 rounded-4 shadow"
-  style="background: linear-gradient(rgba(220,53,69,0.9), rgba(220,53,69,0.9)), url('assets/images/doacao.jpg') center/cover no-repeat;">
+<!-- HERO: Capa cheia -->
+<section class="d-flex align-items-center justify-content-center vh-100 text-white text-center"
+  style="background: linear-gradient(rgba(220,53,69,0.85), rgba(220,53,69,0.85)), url('assets/images/doacao.jpg') center/cover no-repeat;">
   <div class="container">
-    <div class="hero-card mx-auto" style="max-width: 700px;">
-      <h1 class="display-4 fw-bold mb-3">Doe Sangue. Salve Vidas.</h1>
-      <p class="lead mb-4">Seja o <strong>herói anônimo</strong> que alguém precisa hoje.</p>
+    <div class="mx-auto" style="max-width: 700px;">
+      <h1 class="display-3 fw-bold mb-3">Doe Sangue. Salve Vidas.</h1>
+      <p class="lead fs-4 mb-4">Seja o <strong>herói anônimo</strong> que alguém precisa hoje.</p>
       <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-        <a routerLink="/doadores/cadastrar" class="btn btn-light hero-btn">
+        <a routerLink="/doadores/cadastrar" class="btn btn-light btn-lg px-4 py-2">
           <i class="fa-solid fa-user-plus me-2"></i> Cadastrar Doador
         </a>
-        <a routerLink="/agendamentos" class="btn btn-outline-light hero-btn">
+        <a routerLink="/agendamentos" class="btn btn-outline-light btn-lg px-4 py-2">
           <i class="fa-solid fa-calendar-plus me-2"></i> Agendar Doação
         </a>
       </div>
@@ -16,24 +17,26 @@
   </div>
 </section>
 
-<section class="py-5 bg-light text-center m-4 rounded-4 shadow">
+<!-- POR QUE DOAR -->
+<section class="py-5 bg-light text-center">
   <div class="container">
-    <h2 class="display-5 fw-bold mb-4">Por que doar sangue?</h2>
+    <h2 class="display-5 fw-bold mb-3">Por que doar sangue?</h2>
     <p class="lead">Uma doação pode salvar <strong>até 4 vidas</strong>. Doe sangue, doe esperança.</p>
     <p class="fs-5 text-muted">Um ato simples, rápido e <span class="fw-semibold">cheio de impacto</span>.</p>
   </div>
 </section>
 
-<section class="py-5 bg-white m-4 rounded-4 shadow">
+<!-- COMO DOAR -->
+<section class="py-5 bg-white">
   <div class="container">
     <h2 class="text-center display-6 fw-bold mb-5">Como doar sangue?</h2>
-    <div class="row g-5 align-items-center justify-content-center">
+    <div class="row justify-content-center">
       <div class="col-lg-6">
         <ul class="list-unstyled fs-5">
-          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Ter entre 16 e 69 anos</li>
-          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Estar com boa saúde</li>
-          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Pesar no mínimo 50kg</li>
-          <li><i class="fa-solid fa-circle-check text-success me-2"></i> Estar bem alimentado e descansado</li>
+          <li class="mb-2"><i class="fa-solid fa-circle-check text-success me-2"></i> Ter entre 16 e 69 anos</li>
+          <li class="mb-2"><i class="fa-solid fa-circle-check text-success me-2"></i> Estar com boa saúde</li>
+          <li class="mb-2"><i class="fa-solid fa-circle-check text-success me-2"></i> Pesar no mínimo 50kg</li>
+          <li class="mb-2"><i class="fa-solid fa-circle-check text-success me-2"></i> Estar bem alimentado e descansado</li>
           <li><i class="fa-solid fa-circle-check text-success me-2"></i> Levar documento com foto</li>
         </ul>
       </div>
@@ -41,33 +44,33 @@
   </div>
 </section>
 
-<section class="bg-light py-5 text-center">
+<!-- ONDE DOAR -->
+<section class="py-5 bg-light text-center">
   <div class="container">
-    <h2 class="mb-4 display-6"><i class="fa-solid fa-location-dot text-danger"></i> Onde doar em Vitória?</h2>
+    <h2 class="mb-3 display-6"><i class="fa-solid fa-location-dot text-danger"></i> Onde doar em Vitória?</h2>
     <p class="fs-5 mb-4">Encontre o hemocentro mais próximo de você:</p>
-    <div class="card mx-auto shadow rounded-4 border-0 p-4" style="max-width: 500px;">
-      <h5 class="fw-bold">HEMOES - Hemocentro do Espírito Santo</h5>
-      <p>Av. Marechal Campos, 1468 - Maruípe, Vitória - ES</p>
-      <a href="https://hemoes.es.gov.br" target="_blank" class="btn btn-danger btn-sm rounded-pill px-3">
-        Visitar o site <i class="fa-solid fa-arrow-up-right-from-square"></i>
-      </a>
-    </div>
+    <p class="fw-bold fs-5 mb-1">HEMOES - Hemocentro do Espírito Santo</p>
+    <p class="mb-3">Av. Marechal Campos, 1468 - Maruípe, Vitória - ES</p>
+    <a href="https://hemoes.es.gov.br" target="_blank" class="btn btn-danger btn-sm px-4">
+      Visitar o site <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+    </a>
   </div>
 </section>
 
-<section class="py-5 bg-white">
-  <div class="container text-center">
+<!-- BENEFÍCIOS -->
+<section class="py-5 bg-white text-center">
+  <div class="container">
     <h2 class="mb-5 display-6"><i class="fa-solid fa-hand-holding-heart text-success"></i> Benefícios de ser um doador</h2>
     <div class="row g-4 justify-content-center">
       <div class="col-md-6 col-lg-4">
-        <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+        <div class="p-4 bg-light h-100">
           <i class="fa-solid fa-stethoscope fs-1 text-danger mb-3 d-block"></i>
           <h4 class="fw-bold">Check-up Gratuito</h4>
           <p class="text-muted">Avaliação médica e exames gratuitos a cada doação.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
-        <div class="p-4 bg-light rounded-4 shadow-sm h-100">
+        <div class="p-4 bg-light h-100">
           <i class="fa-solid fa-people-group fs-1 text-primary mb-3 d-block"></i>
           <h4 class="fw-bold">Solidariedade</h4>
           <p class="text-muted">Ajude sua comunidade com um gesto de empatia.</p>
@@ -77,11 +80,12 @@
   </div>
 </section>
 
+<!-- CTA FINAL -->
 <section class="py-5 bg-danger text-white text-center">
   <div class="container">
     <h2 class="mb-3 display-5">💉 Pronto para fazer a diferença?</h2>
     <p class="lead mb-4">Cadastre-se ou agende uma doação e <strong>transforme vidas</strong>.</p>
-    <a routerLink="/doadores/cadastrar" class="btn btn-light btn-lg px-5 py-2 rounded-pill fw-semibold">
+    <a routerLink="/doadores/cadastrar" class="btn btn-light btn-lg px-5 py-2 fw-semibold">
       Começar
     </a>
   </div>

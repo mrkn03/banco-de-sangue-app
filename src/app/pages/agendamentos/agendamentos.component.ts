@@ -51,7 +51,7 @@ export class AgendamentosComponent implements OnInit {
     return null;
   }
 
-    montarFormulario(): Observable<agendamento> {
+  montarFormulario(): Observable<agendamento> {
     const novoAgendamento = new agendamento();
 
     return this.doadorService.recuperaDoador(this.agendamentoForm.get('cpf')!.value).pipe(
@@ -93,7 +93,7 @@ export class AgendamentosComponent implements OnInit {
     });
   }
 
-    criarAgendamento(): void {
+  criarAgendamento(): void {
     if (this.agendamentoForm.valid) {
       this.montarFormulario().subscribe({
         next: (agendamento) => {

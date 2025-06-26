@@ -1,109 +1,98 @@
-<div class="container">
-  <h2 class="mt-5">Agendar Doação</h2>
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Agendar Doação</h2>
 
-  <!-- Formulário de Agendamento -->
-  <form [formGroup]="agendamentoForm" (ngSubmit)="criarAgendamento()">
-    <div class="form-group">
-      <label for="cpf">Doador</label>
-      <select id="doadorId" formControlName="cpf" class="form-control" required>
-        <option *ngFor="let doador of doadores" [value]="doador.cpf">
-          {{ doador.nome }}
-        </option>
-      </select>
-
-      <div
-        *ngIf="
-          agendamentoForm.get('doadorId')?.invalid &&
-          agendamentoForm.get('doadorId')?.touched
-        "
-        class="text-danger"
-      >
-        Doador é obrigatório.
-      </div>
+  <!-- Card do Formulário -->
+  <div class="card shadow-sm mb-5">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">Novo Agendamento</h5>
     </div>
+    <div class="card-body">
+      <form [formGroup]="agendamentoForm" (ngSubmit)="criarAgendamento()">
+        <div class="mb-3">
+          <label for="cpf" class="form-label">Doador</label>
+          <select id="doadorId" formControlName="cpf" class="form-select" required>
+            <option value="" disabled selected>Selecione um doador</option>
+            <option *ngFor="let doador of doadores" [value]="doador.cpf">
+              {{ doador.nome }}
+            </option>
+          </select>
+          <div *ngIf="agendamentoForm.get('doadorId')?.invalid && agendamentoForm.get('doadorId')?.touched" class="text-danger mt-1">
+            Doador é obrigatório.
+          </div>
+        </div>
 
-    <div class="form-group">
-      <label for="data">Data</label>
-      <input
-        id="data"
-        formControlName="data"
-        type="date"
-        class="form-control"
-        required
-      />
-      <div
-        *ngIf="
-          agendamentoForm.get('data')?.invalid &&
-          agendamentoForm.get('data')?.touched
-        "
-        class="text-danger"
-      >
-        A data do agendamento é obrigatória e não pode ser no passado.
-      </div>
+        <div class="mb-3">
+          <label for="data" class="form-label">Data</label>
+          <input
+            id="data"
+            formControlName="data"
+            type="date"
+            class="form-control"
+            required
+          />
+          <div *ngIf="agendamentoForm.get('data')?.invalid && agendamentoForm.get('data')?.touched" class="text-danger mt-1">
+            A data do agendamento é obrigatória e não pode ser no passado.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="localColeta" class="form-label">Local de Coleta</label>
+          <input
+            id="localColeta"
+            formControlName="localColeta"
+            type="text"
+            class="form-control"
+            maxlength="100"
+          />
+          <div *ngIf="agendamentoForm.get('localColeta')?.invalid && agendamentoForm.get('localColeta')?.touched" class="text-danger mt-1">
+            O local da coleta deve ter no máximo 100 caracteres.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="observacoes" class="form-label">Observações</label>
+          <textarea
+            id="observacoes"
+            formControlName="observacoes"
+            class="form-control"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="agendamentoForm.invalid">
+          Criar Agendamento
+        </button>
+      </form>
     </div>
+  </div>
 
-    <div class="form-group">
-      <label for="localColeta">Local de Coleta</label>
-      <input
-        id="localColeta"
-        formControlName="localColeta"
-        type="text"
-        class="form-control"
-        maxlength="100"
-      />
-      <div
-        *ngIf="
-          agendamentoForm.get('localColeta')?.invalid &&
-          agendamentoForm.get('localColeta')?.touched
-        "
-        class="text-danger"
-      >
-        O local da coleta deve ter no máximo 100 caracteres.
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="observacoes">Observações</label>
-      <textarea
-        id="observacoes"
-        formControlName="observacoes"
-        class="form-control"
-      ></textarea>
-    </div>
-
-    <button
-      type="submit"
-      class="btn btn-primary mt-3"
-      [disabled]="agendamentoForm.invalid"
-    >
-      Criar Agendamento
-    </button>
-  </form>
-
-  <h3 class="mt-5">Agendamentos</h3>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Doador</th>
-        <th>Data</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for(agendamento of agendamentos; track agendamento){
-      <tr>
-        <td>{{ agendamento.nomeDoador }}</td>
-        <td>{{ agendamento.data | date }}</td>
-        <td>
-          <button
-            (click)="excluirAgendamento(agendamento.AgendamentoId)"
-            class="btn btn-danger"
-          >
-            Excluir
-          </button>
-        </td>
-      </tr>
-      }
-    </tbody>
-  </table>
+  <!-- Lista de Agendamentos -->
+  <h3 class="mb-3">Agendamentos</h3>
+  <div class="table-responsive">
+    <table class="table table-striped align-middle">
+      <thead class="table-light">
+        <tr>
+          <th>Doador</th>
+          <th>Data</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (agendamento of agendamentos; track agendamento) {
+          <tr>
+            <td>{{ agendamento.nomeDoador }}</td>
+            <td>{{ agendamento.data | date }}</td>
+            <td>
+              <button
+                (click)="excluirAgendamento(agendamento.AgendamentoId)"
+                class="btn btn-sm btn-outline-danger"
+              >
+                Excluir
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { Doacao } from '../models/doacao';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,10 @@ export class DoacaoService {
   constructor(private http: HttpClient) { }
 
 
+
+  realizarDoacao(doacao: Doacao): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/realizar-doacao`, doacao);
+  }
 
   getDoacoesPorPeriodo(ano:number, mes?: number): Observable<any> {
 
