@@ -13,23 +13,24 @@ export class DoacaoService {
 
   constructor(private http: HttpClient) { }
 
-
-
   realizarDoacao(doacao: Doacao): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/realizar-doacao`, doacao);
   }
 
-  getDoacoesPorPeriodo(ano:number, mes?: number): Observable<any> {
+  RecuperaDoacoesPorPeriodo(ano: number, mes?: number): Observable<any> {
 
     if (mes) {
       return this.http.get<any[]>(`${this.apiUrl}/doacoes-por-periodo?ano=${ano}&mes=${mes}`);
-    }else{
+    } else {
       return this.http.get<any[]>(`${this.apiUrl}/doacoes-por-periodo?ano=${ano}`);
     }
-
   }
 
-  getRecuperaDoacoes(): Observable<any[]> {
+  ListarDoacoes(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/listar-doacoes`);
+  }
+
+  RecuperarDoacoes() : Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/recupera-doacoes`);
   }
 }

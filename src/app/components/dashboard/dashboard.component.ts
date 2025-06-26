@@ -28,11 +28,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Emit a value to complete the subject and unsubscribe
+
     this.destroy$.next();
     this.destroy$.complete();
 
-    // Destrói os gráficos
+
     this.doacoesChart?.destroy();
     this.estoqueChart?.destroy();
   }
@@ -48,7 +48,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         error: (err) => console.error('Erro ao carregar estoque:', err)
       });
 
-    this.doacaoService.getRecuperaDoacoes()
+    this.doacaoService.ListarDoacoes()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (data: any[]) => {
@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.estoqueChart?.destroy();  // Destrói gráfico existente
+    this.estoqueChart?.destroy(); 
 
     this.estoqueChart = new Chart(ctx, {
       type: 'pie',

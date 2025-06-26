@@ -25,6 +25,7 @@ export class DoacoesComponent {
 
   ngOnInit(): void {
     this.iniciarForm()
+    this.recuperarDoacoes()
   }
 
   iniciarForm(): void {
@@ -48,8 +49,6 @@ export class DoacoesComponent {
       return;
     }
 
-
-
     this.doacaoServico.realizarDoacao(this.montarFormulario()).subscribe({
       next: () => {
         toastr.success('Doação realizada com sucesso!');
@@ -60,9 +59,19 @@ export class DoacoesComponent {
         console.log(error)
       }
     })
-
     this.doacaoForm.reset();
-
   }
 
+  recuperarDoacoes() {
+    this.doacaoServico.RecuperarDoacoes().subscribe({
+      next: (doacoes: any[]) => {
+        this.doacoes = doacoes;
+        console.log(this.doacoes);
+      },
+      error: (error) => {
+        toastr.error('Erro ao recuperar doações');
+        console.log(error);
+      }
+    });
+  }
 }
